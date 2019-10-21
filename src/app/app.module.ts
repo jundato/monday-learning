@@ -17,6 +17,12 @@ import { DemoMaterialModule } from './demo-material-module';
 
 import { SharedModule } from './shared/shared.module';
 import { SpinnerComponent } from './shared/spinner.component';
+import { AppStoreModule } from './store/store.module';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -34,7 +40,11 @@ import { SpinnerComponent } from './shared/spinner.component';
     FlexLayoutModule,
     HttpClientModule,
     SharedModule,
-    RouterModule.forRoot(AppRoutes)
+    RouterModule.forRoot(AppRoutes),
+
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule, 
+    AppStoreModule
   ],
   providers: [
     {

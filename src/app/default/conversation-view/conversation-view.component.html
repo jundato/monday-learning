@@ -1,0 +1,15 @@
+<div fxLayout="column" fxFlexFill>
+    <div class="history" fxFlex="auto" fxLayoutAlign="center center">
+        <app-thread-view fxLayout="column" fxFlexFill fxLayoutAlign="fill start" fxLayoutGap="20px" [thread]="getSelectedThread()"></app-thread-view>
+    </div>
+    <form [formGroup]="form" class="send-message">
+        <div  fxLayout="row" fxFlexFill fxLayoutAlign="center center" fxLayoutGap="20px">
+            <div fxFlex="auto">
+                <mat-form-field>
+                    <input matInput formControlName="textToSend" placeholder="Send A Message">
+                </mat-form-field>
+            </div>
+            <div><button mat-raised-button color="primary" (click)="onClickSend()">Send</button></div>
+        </div>
+    </form>
+</div>
